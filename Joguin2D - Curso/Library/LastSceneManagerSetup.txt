@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SCN_Menu.unity
+- path: Assets/Scenes/SCN_Prototipe_M10.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
     [Header("Jump")]
     public float jumpHeight;
 
+    [Header("Animation")]
+    public string moveBool = "Run";
+    public Animator animator;
+
     #endregion
 
 
@@ -31,6 +35,11 @@ public class Player : MonoBehaviour
         Movement();
 
     }
+    private void OnValidate()
+    {
+        if (animator == null)
+            animator = GetComponent<Animator>();
+    }
 
     private void Movement()
     {
@@ -39,12 +48,20 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
+            myRigidBody.transform.localScale = new Vector3(1, 1, 1);
+            animator.SetBool(moveBool, true);
+
         }
 
         else if (Input.GetKey(KeyCode.A))
         {
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
+            myRigidBody.transform.localScale = new Vector3(-1, 1, 1);
+            animator.SetBool(moveBool, true);
+
         }
+        else 
+            animator.SetBool(moveBool, false);
 
 
         if (myRigidBody.velocity.x > 0)
@@ -64,6 +81,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             _currentSpeed = speedRun;
+            animator.speed = 2;
         }
         else
         {

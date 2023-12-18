@@ -1,0 +1,50 @@
+[api-updater (non-obsolete-error-filter)] 17/12/2023 15:35:40 : Starting H:/Unity/2020.3.2f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 544,4853ms
+moved types parse time: 79ms
+candidates parse time : 7ms
+C# parse time         : 379ms
+candidates check time : 21ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 17/12/2023 15:40:33 : Starting H:/Unity/2020.3.2f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 107,0318ms
+moved types parse time: 39ms
+candidates parse time : 7ms
+C# parse time         : 132ms
+candidates check time : 19ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 18/12/2023 00:34:57 : Starting H:/Unity/2020.3.2f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 504,9086ms
+moved types parse time: 91ms
+candidates parse time : 7ms
+C# parse time         : 311ms
+candidates check time : 21ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 18/12/2023 00:35:58 : Starting H:/Unity/2020.3.2f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 98,2288ms
+moved types parse time: 37ms
+candidates parse time : 7ms
+C# parse time         : 118ms
+candidates check time : 17ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 18/12/2023 00:36:57 : Starting H:/Unity/2020.3.2f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 78,4433ms
+moved types parse time: 42ms
+candidates parse time : 7ms
+C# parse time         : 126ms
+candidates check time : 18ms
+console write time    : 0ms
+

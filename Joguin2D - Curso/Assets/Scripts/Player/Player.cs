@@ -16,8 +16,6 @@ public class Player : MonoBehaviour
     [Header("Running")]
     public float speedRun;
     private float _currentSpeed;
-    private bool _isRunning = false;
-
 
     [Header("Jump")]
     public float jumpHeight;

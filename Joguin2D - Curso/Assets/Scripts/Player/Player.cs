@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -8,21 +9,12 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D myRigidBody;
 
-    [Header("Movement")]
-    public float speed;
-    public Vector2 friction = new Vector2(.1f, 0);
+    public SOPlayer soPlayer;
 
+    public Animator animator;
 
-    [Header("Running")]
-    public float speedRun;
     private float _currentSpeed;
 
-    [Header("Jump")]
-    public float jumpHeight;
-
-    [Header("Animation")]
-    public string moveBool = "Run";
-    public Animator animator;
 
     #endregion
 
@@ -33,6 +25,7 @@ public class Player : MonoBehaviour
         Movement();
 
     }
+
     private void OnValidate()
     {
         if (animator == null)
@@ -47,7 +40,7 @@ public class Player : MonoBehaviour
         {
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
             myRigidBody.transform.localScale = new Vector3(1, 1, 1);
-            animator.SetBool(moveBool, true);
+            animator.SetBool(soPlayer.moveBool, true);
 
         }
 
@@ -55,20 +48,20 @@ public class Player : MonoBehaviour
         {
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
             myRigidBody.transform.localScale = new Vector3(-1, 1, 1);
-            animator.SetBool(moveBool, true);
+            animator.SetBool(soPlayer.moveBool, true);
 
         }
-        else 
-            animator.SetBool(moveBool, false);
+        else
+            animator.SetBool(soPlayer.moveBool, false);
 
 
         if (myRigidBody.velocity.x > 0)
         {
-            myRigidBody.velocity -= friction;
+            myRigidBody.velocity -= soPlayer.friction;
         }
         else if (myRigidBody.velocity.x < 0)
         {
-            myRigidBody.velocity += friction;
+            myRigidBody.velocity += soPlayer.friction;
         }
 
 
@@ -78,12 +71,12 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            _currentSpeed = speedRun;
+            _currentSpeed = soPlayer.speedRun;
             animator.speed = 2;
         }
         else
         {
-            _currentSpeed = speed;
+            _currentSpeed = soPlayer.speed;
         }
 
 
@@ -94,7 +87,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            myRigidBody.velocity = Vector2.up * jumpHeight;
+            myRigidBody.velocity = Vector2.up * soPlayer.jumpHeight;
         }
     }
 

@@ -17,10 +17,16 @@ public class BaseCollectable : MonoBehaviour
     protected virtual void Collect()
     {
         gameObject.SetActive(false);
-        OnCollect();
+        OnCollectCoins();
+        OnCollectLife();
     }
 
-    protected virtual void OnCollect()
+    protected virtual void OnCollectCoins()
+    {
+
+    }
+
+    protected virtual void OnCollectLife()
     {
 
     }

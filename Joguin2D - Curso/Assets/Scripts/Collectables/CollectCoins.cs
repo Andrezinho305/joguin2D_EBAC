@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CollectCoins : BaseCollectable
 {
-    protected override void OnCollect()
+    protected override void OnCollectCoins()
     {
-        base.OnCollect();
+        base.OnCollectCoins();
         ItemManager.Instance.AddCoin();
     }
 

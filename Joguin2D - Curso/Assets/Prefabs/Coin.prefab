@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6421719521939810480
+--- !u!1 &5602839970095198858
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8882081523711777821}
-  - component: {fileID: 822530009018229530}
-  - component: {fileID: 9131270573116265703}
-  - component: {fileID: 4170741547943094460}
-  - component: {fileID: -2665433599525632565}
+  - component: {fileID: 4362612372119964935}
+  - component: {fileID: 487706312491525864}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Sprite_Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8882081523711777821
+--- !u!4 &4362612372119964935
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6421719521939810480}
+  m_GameObject: {fileID: 5602839970095198858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 222.04352}
-  m_LocalScale: {x: 0.5328274, y: 0.55241966, z: 1}
-  m_Children:
-  - {fileID: 4936178970756420977}
-  m_Father: {fileID: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8882081523711777821}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &822530009018229530
+--- !u!212 &487706312491525864
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6421719521939810480}
+  m_GameObject: {fileID: 5602839970095198858}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,6 +82,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6421719521939810480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8882081523711777821}
+  - component: {fileID: 9131270573116265703}
+  - component: {fileID: 4170741547943094460}
+  - component: {fileID: -2665433599525632565}
+  m_Layer: 0
+  m_Name: Coin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8882081523711777821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6421719521939810480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 222.04352}
+  m_LocalScale: {x: 0.5328274, y: 0.55241966, z: 1}
+  m_Children:
+  - {fileID: 4362612372119964935}
+  - {fileID: 4936178970756420977}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &9131270573116265703
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,9 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: Player
-  particleSystem: {fileID: 6119832768097710493, guid: d0329e84e899b77439bd7567f489211e, type: 3}
+  particleSystem: {fileID: 5730631066197519525}
   timeToHide: 1
-  graphicItem: {fileID: 6421719521939810480}
+  graphicItem: {fileID: 5602839970095198858}
 --- !u!1001 &1975191197538786616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6911228221219899465, guid: d0329e84e899b77439bd7567f489211e, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6911228221219899465, guid: d0329e84e899b77439bd7567f489211e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -189,5 +220,10 @@ PrefabInstance:
 --- !u!4 &4936178970756420977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6911228221219899465, guid: d0329e84e899b77439bd7567f489211e, type: 3}
+  m_PrefabInstance: {fileID: 1975191197538786616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5730631066197519525 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6119832768097710493, guid: d0329e84e899b77439bd7567f489211e, type: 3}
   m_PrefabInstance: {fileID: 1975191197538786616}
   m_PrefabAsset: {fileID: 0}

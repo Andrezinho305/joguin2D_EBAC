@@ -23,7 +23,7 @@ using Core.Singleton;
                 {
                     var item = Instantiate(i.prefab);
                     item.transform.position = position;
-                    Destroy(item.gameObject, 5f); //destroi o objeto que é criado - memoria e console, nao viual
+                    Destroy(item.gameObject, 3f);
                     break;
                 }
             }

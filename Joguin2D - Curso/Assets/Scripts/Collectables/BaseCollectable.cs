@@ -33,7 +33,12 @@ public class BaseCollectable : MonoBehaviour
 
     protected virtual void OnCollectCoins()
     {
-        if (particleSystem != null) particleSystem.Play();
+        if (particleSystem != null)
+        {
+            particleSystem.transform.SetParent(null);
+            particleSystem.Play();
+            Destroy(particleSystem.gameObject, 2f);
+        }
     }
 
     protected virtual void OnCollectLife()

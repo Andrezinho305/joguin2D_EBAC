@@ -15,10 +15,10 @@ public class Player : MonoBehaviour
 
     private float _currentSpeed;
 
+    [Header("Jump Collision Check")]
     public float distToGround = 0f;
     public float spaceToGround = .1f; 
     public Collider2D collider2D;
-
 
 
     #endregion
@@ -31,13 +31,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    private bool IsGrounded()
+    {
+        Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
+        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
+    }
+
 
     void Update()
     {
+        IsGrounded();
         Jump();
         Movement();
-        IsGrounded();
-
     }
 
     private void OnValidate()
@@ -46,11 +51,7 @@ public class Player : MonoBehaviour
             animator = GetComponent<Animator>();
     }
 
-    private bool IsGrounded()
-    {
-        Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
-        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
-    }
+
 
     private void Movement()
     {
@@ -61,7 +62,6 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
             myRigidBody.transform.localScale = new Vector3(1, 1, 1);
             animator.SetBool(soPlayer.moveBool, true);
-            PlayRunVFX();
         }
 
         else if (Input.GetKey(KeyCode.A))
@@ -69,7 +69,6 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
             myRigidBody.transform.localScale = new Vector3(-1, 1, 1);
             animator.SetBool(soPlayer.moveBool, true);
-            PlayRunVFX();
         }
         else
             animator.SetBool(soPlayer.moveBool, false);
@@ -102,15 +101,9 @@ public class Player : MonoBehaviour
 
     }
 
-    private void PlayRunVFX()
-    {
-        VFXManager.Instance.PlayVFXbyType(VFXManager.VFXType.RUN, transform.position);
-    }
-
-
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) )
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             myRigidBody.velocity = Vector2.up * soPlayer.jumpHeight;
             PlayJumpVFX();

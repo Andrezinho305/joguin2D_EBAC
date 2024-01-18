@@ -15,6 +15,5 @@ MonoBehaviour:
   speed: 15
   friction: {x: 0.1, y: 0}
   speedRun: 30
-  jumpHeight: 40
+  jumpHeight: 80
   moveBool: Run
-  animator: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}

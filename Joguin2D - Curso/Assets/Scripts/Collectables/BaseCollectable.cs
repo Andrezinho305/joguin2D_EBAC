@@ -5,6 +5,9 @@ using UnityEngine;
 public class BaseCollectable : MonoBehaviour
 {
     public string compareTag = "Player";
+    public ParticleSystem particleSystem;
+    public float timeToHide = 1f;
+    public GameObject graphicItem;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,13 +20,20 @@ public class BaseCollectable : MonoBehaviour
     protected virtual void Collect()
     {
         gameObject.SetActive(false);
+        if (graphicItem != null) graphicItem.SetActive(false);
+        Invoke("HideObject", timeToHide);
         OnCollectCoins();
         OnCollectLife();
     }
 
+    private void HideObject()
+    {
+        gameObject.SetActive(false);
+    }
+
     protected virtual void OnCollectCoins()
     {
-
+        if (particleSystem != null) particleSystem.Play();
     }
 
     protected virtual void OnCollectLife()

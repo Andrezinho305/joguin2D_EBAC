@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded()) //IsGrounded não está funcionando
         {
             myRigidBody.velocity = Vector2.up * soPlayer.jumpHeight;
             PlayJumpVFX();
@@ -113,5 +113,5 @@ public class Player : MonoBehaviour
     private void PlayJumpVFX()
     {
         VFXManager.Instance.PlayVFXbyType(VFXManager.VFXType.JUMP, transform.position);
-    }
+    }    
 }

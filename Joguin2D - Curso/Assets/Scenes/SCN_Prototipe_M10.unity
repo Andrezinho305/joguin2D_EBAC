@@ -4742,6 +4742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Particle System_Dust
       objectReference: {fileID: 0}
+    - target: {fileID: 5556303497672844664, guid: 85197ff6dfd6a0e4ab7184dc71cecb13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5556303497672844666, guid: 85197ff6dfd6a0e4ab7184dc71cecb13, type: 3}
       propertyPath: CollisionModule.m_Planes.Array.size
       value: 2
@@ -5410,8 +5414,6 @@ MonoBehaviour:
   vfxSettup:
   - vfxType: 0
     prefab: {fileID: 2302867518231102028, guid: 1a82da73732168749a0e6ef1d695fbbd, type: 3}
-  - vfxType: 1
-    prefab: {fileID: 5556303497672844664, guid: 85197ff6dfd6a0e4ab7184dc71cecb13, type: 3}
 --- !u!1 &1900469052
 GameObject:
   m_ObjectHideFlags: 0

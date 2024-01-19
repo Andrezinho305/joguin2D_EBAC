@@ -15,5 +15,5 @@ MonoBehaviour:
   speed: 15
   friction: {x: 0.1, y: 0}
   speedRun: 30
-  jumpHeight: 80
+  jumpHeight: 35
   moveBool: Run

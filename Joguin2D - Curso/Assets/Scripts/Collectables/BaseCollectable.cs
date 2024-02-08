@@ -8,6 +8,10 @@ public class BaseCollectable : MonoBehaviour
     public ParticleSystem particleSystem;
     public float timeToHide = 1f;
     public GameObject graphicItem;
+    public Collider2D collider;
+
+    public AudioSource audioSource;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,6 +43,8 @@ public class BaseCollectable : MonoBehaviour
             particleSystem.Play();
             Destroy(particleSystem.gameObject, 2f);
         }
+
+        if (audioSource != null) audioSource.Play();
     }
 
     protected virtual void OnCollectLife()

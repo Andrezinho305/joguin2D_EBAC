@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CollectLife : BaseCollectable
 {
+
     protected override void OnCollectLife()
     {
         base.OnCollectLife();
-        ItemManager.Instance.AddLife();
+        ItemManager.Instance.AddLife(); 
+        collider.enabled = false;
     }
 
 }

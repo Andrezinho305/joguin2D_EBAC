@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     public float spaceToGround = .1f; 
     public Collider2D collider2D;
 
+    [Header("Audio")]
+    public AudioSource jumpSound;
+
 
     #endregion
 
@@ -106,6 +109,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded()) //IsGrounded não está funcionando
         {
             myRigidBody.velocity = Vector2.up * soPlayer.jumpHeight;
+            if(jumpSound != null) jumpSound.Play();
             PlayJumpVFX();
         }
     }
